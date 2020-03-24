@@ -1,9 +1,5 @@
-sonia@example.com [List-one]
-alba@example.net [List-one]
-pepe@example.com [List-two]
+
+ [List-two]
 paco@example.net [List-three]
 sofia@ex.com [List-three]
 maria@exam.com [List-three]
-carlos@holaquetal.com [List-four]
-mercedes@hotmail.com [List-five]
-juan@msn.es [List-five]
