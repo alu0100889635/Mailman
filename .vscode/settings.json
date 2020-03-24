@@ -1,6 +1,0 @@
-{
-    "python.linting.pylintUseMinimalCheckers": false,
-    "python.linting.pylintPath": "",
-    "python.linting.pylintEnabled": false
-
-}
