@@ -13,8 +13,7 @@ row = 0
 column = 0
 
 for x in range(length):
-    fichero = ".txt"
-    t = open(arrayListas[x] + fichero)
+    t = open(arrayListas[x] + ".txt")
     listas = t.read().split("\n")
     sheet = workbook.add_sheet(arrayListas[x])
     lengthy = len(listas)
