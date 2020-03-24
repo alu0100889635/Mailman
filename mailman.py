@@ -5,7 +5,6 @@ workbook = xlwt.Workbook()
 
 f = open("listNames.txt")
 arrayListas = f.read().split("\n")
-print(arrayListas)
 
 # comando para las listas y meterlo en fichero listNames.txt
 # comando para los correos de cada lista y meterlo en ficheros List-X.txt
