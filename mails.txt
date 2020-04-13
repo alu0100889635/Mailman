@@ -1,5 +1,0 @@
-
- [List-two]
-paco@example.net [List-three]
-sofia@ex.com [List-three]
-maria@exam.com [List-three]

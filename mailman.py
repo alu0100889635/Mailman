@@ -1,16 +1,21 @@
 import xlwt
 import re
+import os
 
 workbook = xlwt.Workbook()
+
+command = 'sudo list_lists -b > listNames.txt'
+os.system(command)
 
 f = open("listNames.txt")
 arrayListas = f.read().split("\n")
 
-# comando para las listas y meterlo en fichero listNames.txt
-# comando para los correos de cada lista y meterlo en ficheros List-X.txt
-length = len(arrayListas)
+length = len(arrayListas)-1
 row = 0
 column = 0
+
+for i in range(length):
+    os.system('sudo list_members '+ arrayListas[i] + ' > ' +  arrayListas[i] + '.txt')
 
 for x in range(length):
     t = open(arrayListas[x] + ".txt")
@@ -26,16 +31,3 @@ for x in range(length):
 workbook.save("prueba.xls")
 
 f.close()
-
-
-#exreg= arrayListas[i]
-#('*@*.*')
-#expresioncorreo = '*@*.*'
-
-""" sheet = workbook.add_sheet('Primera hoja')
-sheet1 = workbook.add_sheet('Segunda hoja')
-
-sheet.write(0,0,'Prueba')
-sheet1.write(0,2,'Prueba1')
-
-workbook.save('prueba.xls') """
