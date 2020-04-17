@@ -1,33 +1,35 @@
-import xlwt
-import re
 import os
+import re
+import xlwt
+import sys
 
 workbook = xlwt.Workbook()
 
-command = 'sudo list_lists -b > listNames.txt'
-os.system(command)
-
-f = open("listNames.txt")
-arrayListas = f.read().split("\n")
-
-length = len(arrayListas)-1
-row = 0
-column = 0
+f = open("salida.txt")
+arrayFichero = f.read().split("---------")
+length = len(arrayFichero)-1
+arrayNuevo = []
 
 for i in range(length):
-    os.system('sudo list_members '+ arrayListas[i] + ' > ' +  arrayListas[i] + '.txt')
+    arrayNuevo.append(arrayFichero[i].split("\n"))
 
-for x in range(length):
-    t = open(arrayListas[x] + ".txt")
-    listas = t.read().split("\n")
-    sheet = workbook.add_sheet(arrayListas[x])
-    lengthy = len(listas)
+leng = len(arrayNuevo)
+column = 0
+row = 0
+
+sheet1 = workbook.add_sheet(arrayNuevo[0][0])
+for y in range(1, len(arrayNuevo[0])-1):
+    sheet1.write(row,column,arrayNuevo[0][y])
+    row +=1
+
+for x in range(1, leng):
     row = 0
-    for i in range(lengthy):
-        sheet.write(row,column,listas[i])
-        row += 1
-    t.close()
+    for y in range(len(arrayNuevo[x])-1):
+        if y == 1:
+            sheet = workbook.add_sheet(arrayNuevo[x][y])
+            for z in range(2,len(arrayNuevo[x])-1):
+                sheet.write(row,column,arrayNuevo[x][z])
+                row += 1
 
-workbook.save("prueba.xls")
-
+workbook.save("Listas_correos.xls")
 f.close()

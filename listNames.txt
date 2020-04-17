@@ -1,3 +1,0 @@
-list-one
-list-three
-list-two
