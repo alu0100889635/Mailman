@@ -1,7 +1,4 @@
-import os
-import re
 import xlwt
-import sys
 
 workbook = xlwt.Workbook()
 
